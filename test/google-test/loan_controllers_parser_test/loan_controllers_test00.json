@@ -1,0 +1,102 @@
+{
+  "loans": [
+    {
+      "repaymentStrategy": 0,
+      "duration": 43,
+      "isForceRepay": false,
+      "firstMonthInterestFraction": 0.1,
+      "firstMonthRepaymentFraction": 0.21,
+      "nMonthsToStart": 2,
+      "id": 1,
+      "amount": 10000,
+      "repaymentOption": 0,
+      "interestMonthsArray": [2, 3, 6, 23],
+      "interestRatesArray": [0.2, 0.3, 0.6, 0.23],
+      "monthlyPaymentMax": 10000
+    },
+    {
+      "repaymentStrategy": 1,
+      "duration": 33,
+      "nMonthsToStart": 0,
+      "firstMonthInterestFraction": 0.2,
+      "firstMonthRepaymentFraction": 0.3,
+      "isForceRepay": true,
+      "id": 3,
+      "amount": 3000,
+      "repaymentOption": 1,
+      "interestMonthsArray": [0],
+      "interestRatesArray": [0.23],
+      "monthlyPayment": 3300.02,
+      "extraPayment": {
+        "calenderMonthsAllowed": [
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "annualAllowanceFactor": 0.2,
+        "initialUnusedAllowance": 200,
+        "min": 100
+      },
+      "penaltyFactor": 1
+    },
+    {
+      "repaymentStrategy": 2,
+      "duration": 44,
+      "nMonthsToStart": -10,
+      "firstMonthInterestFraction": 0.01,
+      "firstMonthRepaymentFraction": 0.021,
+      "isForceRepay": true,
+      "id":  2,
+      "amount": 10003,
+
+      "repaymentOption": 1,
+      "interestMonthsArray": [2, 4, 10],
+      "interestRatesArray": [0.2, 0.4, 1],
+      "monthlyPayment": 1000.02,
+      "monthlyPaymentMax": 4000.2,
+
+      "holiday": {
+        "nMonthsPerYear": 3,
+        "initialUnusedAllowance": 1,
+        "shouldAllowConsecutive": false,
+        "shouldExtendTerm": false,
+        "isSequenceStarted": true
+      }
+    }
+  ],
+  "relationsRecords": [
+    {
+      "cashflowId": 3,
+      "taxAccountId": 2,
+      "relationData": {
+        "shouldWithhold": true,
+        "currentRate": 0.4
+      }
+    },
+    {
+      "loanId": 3,
+      "taxAccountId": 1
+    },
+    {
+      "cashflowId": 2,
+      "taxAccountId": 1,
+      "relationData": {
+        "shouldWithhold": false,
+        "currentRate": 0.2
+      }
+    },
+    {
+      "loanId": 1,
+      "taxAccountId": 2
+    }
+  ]
+}
